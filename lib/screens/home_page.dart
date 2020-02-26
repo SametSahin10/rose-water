@@ -74,7 +74,7 @@ class _HomePageState extends State<HomePage> {
                         child: ListTile(
                           title: FlatButton(
                             child: Text(
-                              'Ürunlerimiz',
+                              'Ürünlerimiz',
                               style: TextStyle(fontSize: 20)
                             ),
                             onPressed: () => _scrollToPosition(580),
@@ -91,7 +91,7 @@ class _HomePageState extends State<HomePage> {
                               'İletişim',
                               style: TextStyle(fontSize: 20)
                             ),
-                            onPressed: () => _scrollToPosition(620),
+                            onPressed: () => _scrollToPosition(630),
                           ),
                         ),
                       )          ]
