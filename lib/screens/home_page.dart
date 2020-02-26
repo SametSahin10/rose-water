@@ -35,7 +35,7 @@ class _HomePageState extends State<HomePage> {
                 height: 80,
                 child: ListTile(
                   title: Text(
-                      'Gülsuyu',
+                      'Gül suyu',
                       style: TextStyle(fontSize: 20)
                   ),
                 ),

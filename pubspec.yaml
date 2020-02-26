@@ -21,15 +21,6 @@ flutter:
     - assets/images/
     - assets/fonts/
   fonts:
-    - family: Dosis
-      fonts:
-        - asset: assets/fonts/Dosis-Regular.ttf
-    - family: Nunito
-      fonts:
-        - asset: assets/fonts/Nunito-Regular.ttf
     - family: Raleway
       fonts:
         - asset: assets/fonts/Raleway-Regular.ttf
-    - family: Spartan
-      fonts:
-        - asset: assets/fonts/Spartan-Regular.ttf
