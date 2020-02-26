@@ -11,57 +11,72 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 0,
-        leading: Image.network(Constants.dummy_image_url),
-        title: Padding(
-          padding: const EdgeInsets.only(top: 20),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(110),
+        child: AppBar(
+          backgroundColor: Colors.white,
+          elevation: 0,
+          flexibleSpace: Column(
             children: <Widget>[
-              Container(
-                width: 160,
-                height: 80,
-                child: ListTile(
-                  title: Text(
-                  'Anasayfa',
-                  style: TextStyle(fontSize: 20)
-                  ),
+              Padding(
+                padding: const EdgeInsets.only(top: 10),
+                child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[
+                      Image.asset(
+                        Assets.logo,
+                        scale: 9,
+                      ),
+                      SizedBox(width: 60),
+                      Container(
+                        padding: EdgeInsets.only(top: 14),
+                        width: 160,
+                        height: 80,
+                        child: ListTile(
+                          title: Text(
+                              'Anasayfa',
+                              style: TextStyle(fontSize: 20)
+                          ),
+                        ),
+                      ),
+                      Container(
+                        padding: EdgeInsets.only(top: 14),
+                        width: 160,
+                        height: 80,
+                        child: ListTile(
+                          title: Text(
+                              'Gül Suyu',
+                              style: TextStyle(fontSize: 20)
+                          ),
+                        ),
+                      ),
+                      Container(
+                        padding: EdgeInsets.only(top: 14),
+                        width: 160,
+                        height: 80,
+                        child: ListTile(
+                          title: Text(
+                            'Ürunlerimiz',
+                            style: TextStyle(fontSize: 20)
+                          ),
+                        ),
+                      ),
+                      Container(
+                        padding: EdgeInsets.only(top: 14),
+                        width: 160,
+                        height: 80,
+                        child: ListTile(
+                          title: Text(
+                            'İletişim',
+                            style: TextStyle(fontSize: 20)
+                          ),
+                        ),
+                      )          ]
                 ),
               ),
-              Container(
-                width: 160,
-                height: 80,
-                child: ListTile(
-                  title: Text(
-                      'Gül suyu',
-                      style: TextStyle(fontSize: 20)
-                  ),
-                ),
-              ),
-              Container(
-                width: 160,
-                height: 80,
-                child: ListTile(
-                  title: Text(
-                      'Ürunlerimiz',
-                      style: TextStyle(fontSize: 20)
-                  ),
-                ),
-              ),
-              Container(
-                width: 160,
-                height: 80,
-                child: ListTile(
-                  title: Text(
-                      'İletişim',
-                      style: TextStyle(fontSize: 20)
-                  ),
-                ),
-              )          ]
+            ],
           ),
-        ),
 //        actions: <Widget>[
 //          Container(
 //            width: 120,
@@ -92,6 +107,7 @@ class _HomePageState extends State<HomePage> {
 //            ),
 //          )
 //        ],
+        ),
       ),
       body: _buildBody(),
     );
@@ -107,12 +123,20 @@ class _HomePageState extends State<HomePage> {
           fit: BoxFit.cover,
         ),
         SizedBox(height: 30),
-        Text(
-          Constants.text_below_the_banner,
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            fontSize: 20
-          ),
+        Row(
+          children: <Widget>[
+            SizedBox(width: 150),
+            Expanded(
+              child: Text(
+                Constants.text_below_the_banner,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 20
+                ),
+              ),
+            ),
+            SizedBox(width: 150)
+          ],
         )
       ],
     );
