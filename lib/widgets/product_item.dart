@@ -18,8 +18,9 @@ class ProductItem extends StatelessWidget {
         child: Column(
           children: <Widget>[
             Image.asset(imagePath),
+            Expanded(child: SizedBox()),
             Padding(
-              padding: const EdgeInsets.only(top: 15),
+              padding: const EdgeInsets.all(12),
               child: Text(
                 title,
                 style: TextStyle(

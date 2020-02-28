@@ -42,93 +42,66 @@ class _HomePageState extends State<HomePage> {
                       Container(
                         padding: EdgeInsets.only(top: 14),
                         width: 180,
-                        height: 80,
-                        child: ListTile(
-                          title: FlatButton(
-                            child: Text(
-                              'Anasayfa',
-                              style: TextStyle(fontSize: 20)
-                            ),
-                            onPressed: () => _scrollToPosition(0),
+                        child: FlatButton(
+                          child: Text(
+                            'Anasayfa',
+                            style: TextStyle(fontSize: 20)
                           ),
+                          onPressed: () => _scrollToPosition(0),
                         ),
                       ),
                       Container(
                         padding: EdgeInsets.only(top: 14),
                         width: 180,
-                        height: 80,
-                        child: ListTile(
-                          title: FlatButton(
-                            child: Text(
-                                'Gül Suyu',
-                                style: TextStyle(fontSize: 20)
-                            ),
-                            onPressed: () => _scrollToPosition(430),
+                        height: 60,
+                        child: FlatButton(
+                          child: Text(
+                            'Gül Suyu',
+                            style: TextStyle(fontSize: 20)
                           ),
+                          onPressed: () => _scrollToPosition(430),
                         ),
                       ),
                       Container(
                         padding: EdgeInsets.only(top: 14),
                         width: 180,
-                        height: 80,
-                        child: ListTile(
-                          title: FlatButton(
-                            child: Text(
-                              'Ürünlerimiz',
-                              style: TextStyle(fontSize: 20)
-                            ),
-                            onPressed: () => _scrollToPosition(580),
+                        height: 60,
+                        child: FlatButton(
+                          child: Text(
+                            'Ürünlerimiz',
+                            style: TextStyle(fontSize: 20)
                           ),
+                          onPressed: () => _scrollToPosition(680),
                         ),
                       ),
                       Container(
                         padding: EdgeInsets.only(top: 14),
                         width: 180,
-                        height: 80,
-                        child: ListTile(
-                          title: FlatButton(
-                            child: Text(
-                              'İletişim',
-                              style: TextStyle(fontSize: 20)
-                            ),
-                            onPressed: () => _scrollToPosition(630),
+                        height: 60,
+                        child: FlatButton(
+                          child: Text(
+                           'Hakkımızda',
+                            style: TextStyle(fontSize: 20)
                           ),
+                          onPressed: () => _scrollToPosition(1300),
+                        ),
+                      ),
+                      Container(
+                        padding: EdgeInsets.only(top: 14),
+                        width: 180,
+                        height: 60,
+                        child: FlatButton(
+                          child: Text(
+                            'İletişim',
+                            style: TextStyle(fontSize: 20)
+                          ),
+                          onPressed: () => _scrollToPosition(1400),
                         ),
                       )          ]
                 ),
               ),
             ],
           ),
-//        actions: <Widget>[
-//          Container(
-//            width: 120,
-//            height: 80,
-//            child: ListTile(
-//              title: Text('Anasayfa'),
-//            ),
-//          ),
-//          Container(
-//            width: 120,
-//            height: 80,
-//            child: ListTile(
-//              title: Text('Gülsuyu'),
-//            ),
-//          ),
-//          Container(
-//            width: 120,
-//            height: 80,
-//            child: ListTile(
-//              title: Text('Ürünlerimiz'),
-//            ),
-//          ),
-//          Container(
-//            width: 120,
-//            height: 80,
-//            child: ListTile(
-//              title: Text('İletişim'),
-//            ),
-//          )
-//        ],
         ),
       ),
       body: _buildBody(),
@@ -146,24 +119,47 @@ class _HomePageState extends State<HomePage> {
           fit: BoxFit.cover,
         ),
         SizedBox(height: 30),
-        Row(
-          children: <Widget>[
-            SizedBox(width: 150),
-            Expanded(
-              child: Text(
-                Constants.text_below_the_banner,
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 20
-                ),
+        Align(
+          alignment: Alignment.center,
+          child: Container(
+            width: 1000,
+            child: Text(
+              Constants.text_below_the_banner,
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: 20
               ),
             ),
-            SizedBox(width: 150)
-          ],
+          ),
         ),
         SizedBox(height: 30),
         _buildProducts(),
         SizedBox(height: 30),
+        Align(
+          alignment: Alignment.center,
+          child: Text(
+            'Hakkımızda',
+            textAlign: TextAlign.center,
+            style: TextStyle(
+                fontSize: 24
+            ),
+          ),
+        ),
+        SizedBox(height: 10),
+        Align(
+          alignment: Alignment.center,
+          child: Container(
+            width: 1000,
+            child: Text(
+              Constants.about_us_text,
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                  fontSize: 20
+              ),
+            ),
+          ),
+        ),
+        SizedBox(height: 50),
         Center(
           child: Text(
             Constants.footer_text,
@@ -176,13 +172,38 @@ class _HomePageState extends State<HomePage> {
   }
 
   Widget _buildProducts() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
+    return Column(
       children: <Widget>[
-        ProductItem(Assets.product_50_ml, 'Gül Suyu 50 ml'),
-        ProductItem(Assets.product_100_ml, 'Gül Suyu 100 ml'),
-        ProductItem(Assets.product_250_ml, 'Gül Suyu 250 ml'),
-        ProductItem(Assets.product_400_ml, 'Gül Suyu 400 ml'),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: <Widget>[
+            ProductItem(Assets.product_50_ml, 'Gül Suyu 50 ml'),
+            ProductItem(Assets.product_100_ml, 'Gül Suyu 100 ml'),
+            ProductItem(Assets.product_250_ml, 'Gül Suyu 250 ml'),
+            ProductItem(Assets.product_400_ml, 'Gül Suyu 400 ml'),
+          ],
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: <Widget>[
+            ProductItem(
+              Assets.product_in_box_100_ml,
+              'Gül Suyu Kutulu 100 ml'
+            ),
+            ProductItem(
+              Assets.product_in_box_100_ml_one,
+              'Gül Suyu Kutulu 100 ml'
+            ),
+            ProductItem(
+              Assets.product_in_box_250_ml,
+              'Gül Suyu Kutulu 250 ml'
+            ),
+            ProductItem(
+              Assets.product_in_box_250_ml_one,
+              'Gül Suyu Kutulu 250 ml'
+            ),
+          ],
+        ),
       ],
     );
   }
